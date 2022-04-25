@@ -26,10 +26,10 @@ function Login() {
         setnewUser(false);
       } else {
         const { data } = await axios.post(usersURI + "/login", Info);
-        nav("/MernStackEcommerce/");
+        nav("/MernStackEcommerce");
         hasLoggedIn();
       }
-    } catch (err) {
+    } catrch (err) {
       setLabel(err.response.data.msg);
     }
   };
