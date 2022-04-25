@@ -7,8 +7,9 @@ const Globalcontext = createContext({});
 export function AppProvider({ children }) {
   const [query, setquery] = useState({});
   const [searchText, setSearchText] = useState("");
-  const productURI = "http://localhost:5000/api/v1/products";
-  const usersURI = "http://localhost:5000/api/v1/users";
+  const productURI =
+    "https://e-commercewithnodejs.herokuapp.com/api/v1/products";
+  const usersURI = "https://e-commercewithnodejs.herokuapp.com/api/v1/users";
   const [closedSidebar, showSidebar] = useState(true);
   const [haslogin, setHaslogin] = useState(null);
   const [newUser, setnewUser] = useState(false);
