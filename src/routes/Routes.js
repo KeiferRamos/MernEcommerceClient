@@ -12,12 +12,12 @@ import {
 function RoutesPage() {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/products" element={<ProductPage />} />
-      <Route path="/cart" element={<CartPage />} />
-      <Route path="/search" element={<SearchPage />} />
+      <Route path="/MernStackEcommerce/" element={<HomePage />} />
+      <Route path="/MernStackEcommerce/products" element={<ProductPage />} />
+      <Route path="/MernStackEcommerce/cart" element={<CartPage />} />
+      <Route path="/MernStackEcommerce/search" element={<SearchPage />} />
       <Route
-        path="/products/:productName"
+        path="/MernStackEcommerce/products/:productName"
         element={<SingleProductPage />}
       />
     </Routes>
