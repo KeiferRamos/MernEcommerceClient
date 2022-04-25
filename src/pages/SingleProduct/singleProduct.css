@@ -1,0 +1,245 @@
+.single-product {
+  height: 100vh;
+  width: 100%;
+  padding-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  background: #fff;
+  overflow: scroll;
+  position: relative;
+}
+
+.about {
+  padding: 5px;
+  height: 100%;
+  width: 50%;
+  display: grid;
+  grid-template-rows: 300px 30px auto 1fr 1fr;
+  gap: 5px;
+}
+
+.about > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.single-product-info {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+}
+
+.single-product-info > p {
+  margin-left: auto;
+}
+
+.addtocart-btn {
+  padding: 2px 4px;
+}
+
+.single-product-color {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  background: #4d7783;
+  cursor: pointer;
+  position: relative;
+}
+
+.color-picker {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-size: 13px;
+  color: #fff;
+}
+
+.color-picker > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 5px;
+}
+
+.color-picker div > div {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #bebebe;
+}
+
+.specs {
+  height: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 5px 0;
+}
+
+.specs > p {
+  flex: 1;
+  padding: 5px 10px;
+  border: 1px solid #bebebe;
+  display: flex;
+  align-items: center;
+}
+
+.about-gadget {
+  background: #446a76;
+  padding: 5px;
+  color: rgb(165, 198, 208);
+}
+
+.reviews {
+  height: 100%;
+  width: 50%;
+  padding: 5px;
+  display: grid;
+  grid-template-rows: 50px 500px auto;
+}
+
+.head {
+  display: flex;
+  height: 50px;
+  gap: 5px;
+  background: #4d7783;
+  color: #fff;
+  text-transform: uppercase;
+  align-items: center;
+  padding: 0 5px;
+  justify-content: flex-end;
+}
+
+.head > h3 {
+  margin-right: auto;
+  margin-left: 5px;
+}
+
+.head > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 20px;
+  padding: 5px;
+  background: rgb(120, 195, 218);
+  border-radius: 3px;
+}
+
+.comments {
+  background: #4d7783;
+  margin: 5px 0;
+  padding: 5px;
+  overflow: scroll;
+  height: 500px;
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr 100px;
+}
+.comments-container {
+  overflow: scroll;
+}
+
+.comments .comments-container > div {
+  margin-bottom: 5px;
+  padding: 5px;
+  background: #fff;
+}
+
+.user-comment {
+  position: absolute;
+  padding: 5px;
+  height: 100px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: none;
+  display: flex;
+  align-items: flex-end;
+}
+
+.comment-icon {
+  height: 40px;
+  width: 40px;
+  font-size: 20px;
+  display: grid;
+  place-items: center;
+  color: #446a76;
+  background: #fff;
+  border: none;
+}
+
+.user-comment > textarea {
+  background: none;
+  outline: none;
+  border: 1px solid #bebebe;
+  height: 100%;
+  padding: 5px;
+  color: #fff;
+  resize: none;
+  flex: 1;
+}
+
+.comments-btn {
+  margin: 5px 0;
+  display: flex;
+  gap: 5px;
+}
+
+.error {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  background: rgb(0, 0, 0, 0.8);
+  z-index: 111111;
+}
+
+::-webkit-input-placeholder {
+  color: #aab1b3;
+}
+
+.related-products {
+  margin-top: 10px;
+  background: #4d7783;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+  overflow: scroll;
+  padding: 5px;
+}
+
+.related-products > div {
+  padding: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.related-products div > img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.related-products div > p {
+  color: #fff;
+}
+
+@media (max-width: 850px) {
+  .about {
+    width: 100%;
+    height: auto;
+  }
+  .reviews {
+    width: 100%;
+    grid-template-rows: 50px 300px auto;
+  }
+  .comments {
+    height: 300px;
+  }
+}

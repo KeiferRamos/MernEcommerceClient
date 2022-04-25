@@ -1,0 +1,405 @@
+.Cart {
+  height: 100vh;
+  width: 100%;
+  padding-top: 50px;
+  background: #317482;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  overflow: scroll;
+}
+
+.user-details {
+  height: 70px;
+  padding: 0 10px;
+  gap: 5px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  position: relative;
+}
+
+.user-details > .details {
+  margin-right: auto;
+}
+
+.user-details > img {
+  width: 50px;
+  height: 50px;
+}
+
+.notif {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  background: rgb(217, 237, 237);
+  font-size: 30px;
+  border-radius: 5px;
+}
+
+.orderNotif {
+  position: absolute;
+  right: 0;
+  z-index: 100000;
+  background: #aed0da;
+  color: #9dc4cb;
+  font-size: 13px;
+  position: fixed;
+  bottom: 0;
+  margin: 5px;
+}
+
+.orderNotif > div {
+  background: #465d64;
+  padding: 10px 20px;
+  margin: 5px;
+}
+
+.notif-symbol {
+  position: absolute;
+  transform: translate(-25px, 20px);
+  width: 20px;
+  height: 20px;
+  background: red;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: bolder;
+  border-radius: 50%;
+}
+
+.cart-item {
+  max-height: calc(100vh - 50px);
+  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, auto));
+  overflow: scroll;
+}
+
+.cart-container {
+  height: 300px;
+  margin: 5px;
+  padding: 5px;
+  background: #fff;
+  border: 1px solid #bebebe;
+  cursor: pointer;
+}
+
+.cart-container > img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.chosen-color {
+  display: flex;
+}
+
+.color {
+  border: 1px solid #bebebe;
+  margin: 0 5px;
+  width: 20px;
+  height: 20px;
+}
+
+.remove-btn {
+  margin-left: auto;
+  padding: 0 5px;
+  border: none;
+  background: rgb(89, 124, 126);
+  color: #fff;
+}
+
+.cart-info,
+.cart-price {
+  padding: 5px;
+  height: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.cart-info > h3 {
+  background: rgb(80, 113, 121);
+  color: #fff;
+  padding: 5px 10px;
+}
+
+.cart-quantity {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.user-cart-info {
+  height: calc(100vh - 50px);
+  padding-bottom: 160px;
+  width: 50%;
+  position: relative;
+  background: #6795a2;
+}
+
+.user-cart-info > h2 {
+  color: #fff;
+  padding: 5px;
+}
+
+.user-info {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(1fr, auto));
+  padding: 5px;
+  color: #fff;
+}
+
+.info-modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0, 0.4);
+  display: grid;
+  place-items: center;
+}
+
+.info-modal > p {
+  background-color: #fff;
+  color: #2a6570;
+  padding: 5px 10px;
+}
+
+.user-info > button {
+  margin: 2px;
+  margin-top: 10px;
+  padding: 5px;
+  font-size: 20px;
+  border: none;
+  color: #5798a5;
+  background: #2a6570;
+}
+
+.streetAddress,
+.Barangay,
+.City {
+  grid-column: span 2;
+}
+
+.cart-input {
+  padding: 2px;
+}
+
+.cart-input > input {
+  width: 100%;
+  height: 40px;
+  padding: 0 5px;
+  margin-top: 5px;
+  outline: none;
+  border: none;
+}
+
+.modeOfpayment {
+  background: #fff;
+  margin: 5px 10px;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+.modeOfpayment > div {
+  display: flex;
+  padding: 3px;
+  gap: 5px;
+}
+
+.modeOfpayment > h4 {
+  padding: 5px;
+}
+
+.mode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  flex: 1;
+  padding: 3px 6px;
+  gap: 5px;
+  cursor: pointer;
+  border: 1px solid #317482;
+  transition: all 0.7s;
+  position: relative;
+}
+
+.mode:hover {
+  background: #3b8493;
+  color: #fff;
+}
+
+.check-out {
+  width: calc(100% - 20px);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 5px 10px;
+  height: 200px;
+  gap: 10px;
+  padding: 5px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  background: #587f8a;
+  color: #fff;
+}
+
+.item-info {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-info > p {
+  flex: 1;
+  padding: 5px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.check-out .item-info > button {
+  padding: 10px 0;
+  background: #2a6570;
+  color: #c3e1e7;
+  border: none;
+}
+
+.incomplete-error {
+  position: absolute;
+  top: 100%;
+  margin-top: 15px;
+  left: 0;
+  width: 100%;
+  background: rgb(45, 71, 81);
+  color: #57949f;
+  padding: 10px;
+  z-index: 10000000;
+}
+
+.incomplete-error::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgb(45, 71, 81);
+  transform: rotate(45deg);
+  top: -10px;
+}
+
+.incomplete-error > button {
+  margin-top: 10px;
+  padding: 2px 10px;
+  border: none;
+}
+
+.payment > div {
+  position: relative;
+}
+
+.payment-error {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 10px 5px;
+  margin-top: 10px;
+  width: 100%;
+  background: #fff;
+  text-align: center;
+}
+
+.success-msg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  z-index: 10000000000000000;
+}
+
+.success-msg > p {
+  background: #fff;
+  padding: 100px 50px;
+  border: #2a6570 solid 2px;
+}
+
+@media (max-width: 1000px) {
+  .check-out {
+    height: 150px;
+  }
+  .item-info > p {
+    padding: 0;
+  }
+}
+
+.payment {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  background: rgb(0, 0, 0, 0.5);
+}
+
+.payment > div {
+  background-color: #fff;
+  padding: 15px;
+  width: 400px;
+  position: relative;
+}
+
+.payment div > button {
+  margin-right: 5px;
+  padding: 2px 6px;
+  border: none;
+}
+
+.payment-info {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  gap: 10px;
+}
+
+.payment-info > input {
+  flex: 1;
+  height: 30px;
+}
+
+.selected {
+  background: #2a6570 !important;
+  color: #fff !important;
+}
+
+@media (max-width: 800px) {
+  .cart-item {
+    width: 100%;
+    max-height: 100%;
+  }
+  .user-cart-info {
+    height: auto;
+    width: 100%;
+  }
+  .mode {
+    font-size: 13px;
+    gap: 0;
+    padding: 3px 6px;
+  }
+  .payment > div {
+    width: 330px;
+  }
+}

@@ -1,0 +1,26 @@
+.signout-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+  background: rgb(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.signout-modal > div {
+  background: #fff;
+  padding: 15px 30px;
+  border-radius: 5px;
+}
+
+.signout-modal div > button {
+  margin: 0 5px;
+  margin-top: 10px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: none;
+}

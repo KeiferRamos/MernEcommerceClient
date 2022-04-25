@@ -1,0 +1,56 @@
+.combobox-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #5c90a3;
+}
+
+.combobox {
+  flex: 1;
+  position: relative;
+}
+
+.combobox > .name {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: #abcdda;
+  padding: 0 5px;
+  flex: 1;
+  border-radius: 2px;
+}
+
+.combobox:nth-child(1),
+.combobox:nth-child(2) {
+  flex: 1.5;
+}
+
+.combobox:nth-child(even) {
+  background: #4c7c91;
+}
+
+.choices {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  color: #abcdda;
+  background: #5c90a3;
+  font-size: 14px;
+}
+
+.choices > p {
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.choices > p:first-child {
+  margin-top: 0;
+}
+
+.choices > p:hover {
+  background: #4b7385;
+}
