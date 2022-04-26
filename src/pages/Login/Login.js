@@ -25,8 +25,8 @@ function Login() {
       if (newUser) {
         setnewUser(false);
       } else {
-        const { data } = await axios.post(usersURI + "/login", Info);
-        nav(data);
+        await axios.post(usersURI + "/login", Info);
+        nav("/MernStackEcommerce/");
         hasLoggedIn();
       }
     } catch (err) {

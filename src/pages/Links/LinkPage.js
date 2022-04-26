@@ -23,7 +23,7 @@ function LinkPage() {
   }, [scrollY]);
 
   const navigate = (route) => {
-    nav(route);
+    nav(`/MernStackEcommerce${route}`);
     setquery({});
   };
 
@@ -36,7 +36,7 @@ function LinkPage() {
             <input
               readOnly
               placeholder="e.g. earphone"
-              onClick={() => navigate("/search")}
+              onClick={() => navigate("/MernStackEcommerce/search")}
             />
             <FiSearch />
           </div>
