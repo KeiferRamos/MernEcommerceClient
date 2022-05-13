@@ -18,7 +18,7 @@ function Link({ icon, name, path }) {
     if (name == "SIGN-OUT") {
       setInfo({ ...Info, signingOut: true });
     } else {
-      nav(`/MernStackEcommerce${path}`);
+      nav(path);
     }
   };
 

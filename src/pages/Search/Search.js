@@ -6,6 +6,8 @@ import axios from "axios";
 function Search() {
   const { productURI, searchText, setSearchText } = useGlobalcontext();
   const [products, setproducts] = useState([]);
+  const [BrandRef, setBrandreference] = useState([]);
+  const [classRef, setclassReference] = useState([]);
   const nav = useNavigate();
 
   const getProducts = async () => {
@@ -20,7 +22,17 @@ function Search() {
     setproducts([...new Set(mappedData)]);
   };
 
+  const getReference = async () => {
+    const { data } = await axios.get(productURI);
+    const Brand = data.map((item) => item.brand);
+    const Class = data.map((item) => item.category);
+    setBrandreference(Brand);
+    console.log(Brand);
+    setclassReference(Class);
+  };
+
   useEffect(() => {
+    getReference();
     searchText ? getProducts() : setproducts([]);
   }, [searchText]);
 
@@ -28,7 +40,7 @@ function Search() {
     setSearchText("");
     nav(-1);
   };
-  return { products, clearSearch };
+  return { products, clearSearch, BrandRef, classRef };
 }
 
 export default Search;

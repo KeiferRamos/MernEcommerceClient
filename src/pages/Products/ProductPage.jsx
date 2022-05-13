@@ -3,7 +3,6 @@ import useGlobalContext from "../../Helper/AppProvider";
 import Products from "../../Components/Product";
 import ComboBox from "../../Components/comboBox";
 import Product from "./Product";
-import Noitem from "../../Components/Noitem";
 import Loading from "../../Components/Loading";
 
 function ProductPage() {
@@ -11,6 +10,7 @@ function ProductPage() {
   const { query } = useGlobalContext();
   return (
     <div className="Products">
+      {products.length == 0 && <Loading />}
       <div className="product-info">
         <p>BRAND: {query.brand || "all"}</p>
         <p>CATEGORY: {query.category || "all"}</p>

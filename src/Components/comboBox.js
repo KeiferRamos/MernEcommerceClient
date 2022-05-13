@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaSortDown, FaSortUp } from "react-icons/fa";
 import useGlobalContext from "../Helper/AppProvider";
 import "../Styles/Combobox.css";
@@ -12,6 +12,10 @@ function ComboBox({ sort }) {
     setquery({ ...query, [name]: choices });
     setshow(false);
   };
+
+  useEffect(() => {
+    console.log(query);
+  }, [query]);
 
   const sortHandler = () => {
     name == "by Price" &&

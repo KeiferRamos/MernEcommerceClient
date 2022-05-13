@@ -10,6 +10,7 @@ import useGlobalcontext from "../../Helper/AppProvider";
 import { FcAnswers } from "react-icons/fc";
 import { FaTimes } from "react-icons/fa";
 import Notif from "../../Components/notif";
+import Loading from "../../Components/Loading";
 
 function CartPage() {
   const {

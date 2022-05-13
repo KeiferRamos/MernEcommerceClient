@@ -1,13 +1,12 @@
 import React from "react";
-import useGlobalContext from "../Helper/AppProvider";
 import { useNavigate } from "react-router-dom";
 import { FaShoppingCart, FaTimes } from "react-icons/fa";
 import { FiSettings } from "react-icons/fi";
+import useGlobalContext from "../../Helper/AppProvider";
 
-function Sidebar() {
-  const { closedSidebar, showSidebar, setInfo, Info } = useGlobalContext();
+function Sidebar({ showSidebar, closedSidebar }) {
+  const { setInfo, Info } = useGlobalContext();
   const nav = useNavigate();
-
   const navigateUser = (path) => {
     nav(path);
     showSidebar(true);

@@ -7,7 +7,7 @@ import Recommend from "../../Components/Recommend";
 
 function SearchPage() {
   const { searchText, setSearchText } = useGlobalcontext();
-  const { clearSearch, products } = Search();
+  const { products, clearSearch, BrandRef, classRef } = Search();
 
   return (
     <div className="Search">
@@ -21,7 +21,14 @@ function SearchPage() {
         />
       </div>
       {products.map((product, i) => {
-        return <Recommend key={i} product={product} />;
+        return (
+          <Recommend
+            key={i}
+            product={product}
+            BrandRef={BrandRef}
+            classRef={classRef}
+          />
+        );
       })}
     </div>
   );

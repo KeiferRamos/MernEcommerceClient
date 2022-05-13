@@ -1,40 +1,24 @@
 import React from "react";
-import { useRef, useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiArrowUpLeft } from "react-icons/fi";
 import useGlobalcontext from "../Helper/AppProvider";
-import axios from "axios";
 
-function Recommend({ product }) {
-  const textRef = useRef(null);
+function Recommend({ product, BrandRef, classRef }) {
+  const [text, setText] = useState(product);
   const nav = useNavigate();
-  const [BrandRef, setBrandreference] = useState([]);
-  const [classRef, setclassReference] = useState([]);
-  const { setSearchText, productURI, setquery } = useGlobalcontext();
-
-  const getReference = async () => {
-    const { data } = await axios.get(productURI);
-    const Brand = data.map((item) => item.brand);
-    const Class = data.map((item) => item.category);
-    setBrandreference(Brand);
-    setclassReference(Class);
-  };
-
-  useEffect(() => {
-    getReference();
-  }, []);
+  const { setSearchText, setquery, query } = useGlobalcontext();
 
   const updateSearchText = () => {
-    setSearchText(textRef.current.textContent);
+    setSearchText(product);
   };
 
-  const navigateUser = () => {
-    const text = textRef.current.textContent;
+  const navigateUser = async () => {
     if (BrandRef.includes(text) || classRef.includes(text)) {
       if (BrandRef.includes(text)) {
-        setquery({ brand: text });
-      } else {
-        setquery({ category: text });
+        setquery({ ...query, brand: text });
+      } else if (classRef.includes(text)) {
+        setquery({ ...query, category: text });
       }
       nav("/products");
     } else {
@@ -45,9 +29,7 @@ function Recommend({ product }) {
 
   return (
     <div className="recommended">
-      <p ref={textRef} onClick={() => navigateUser()}>
-        {product}
-      </p>
+      <p onClick={() => navigateUser()}>{product}</p>
       <FiArrowUpLeft onClick={() => updateSearchText()} />
     </div>
   );
